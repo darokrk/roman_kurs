@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 import bulbIcon from '../../../assets/icons/bulb.svg';
 import logoutIcon from '../../../assets/icons/logout.svg';
@@ -10,11 +11,11 @@ const Sidebar = () => (
   <div>
     <p>logo</p>
     <div>
-      <ButtonIcon icon={penIcon} />
-      <ButtonIcon icon={twitterIcon} />
-      <ButtonIcon icon={bulbIcon} />
+      <ButtonIcon as={Link} to="/" icon={penIcon} />
+      <ButtonIcon as={Link} to="/twitters" icon={twitterIcon} />
+      <ButtonIcon as={Link} to="/articles" icon={bulbIcon} />
     </div>
-    <ButtonIcon icon={logoutIcon} />
+    <ButtonIcon as={Link} to="/" icon={logoutIcon} />
   </div>
 );
 export default Sidebar;
