@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import Heading from '../../atoms/Heading/Heading';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 import bulbIcon from '../../../assets/icons/bulb.svg';
 import logoutIcon from '../../../assets/icons/logout.svg';
@@ -21,7 +19,7 @@ const StyledWrapper = styled.nav`
   align-items: center;
   width: 150px;
   height: 100vh;
-  background-color: ${({ theme }) => theme.note};
+  background-color: ${({ activeColor, theme }) => (activeColor ? theme[activeColor] : theme.note)};
 `;
 
 const StyledLogoLink = styled(NavLink)`
@@ -46,8 +44,8 @@ const StyledLinksList = styled.ul`
   list-style: none;
 `;
 
-const Sidebar = () => (
-  <StyledWrapper>
+const Sidebar = ({ pageType }) => (
+  <StyledWrapper activeColor={pageType}>
     <StyledLogoLink to="/" />
     <StyledLinksList>
       <li>
