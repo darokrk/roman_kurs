@@ -13,9 +13,6 @@ const Root = () => (
         <Route path="/articles" component={Articles} />
         <Route path="/twitters" component={Twitters} />
       </Switch>
-      <h1>notes</h1>
-      <h1>twitters</h1>
-      <h1>articles</h1>
     </BrowserRouter>
   </MainTemplate>
 );
