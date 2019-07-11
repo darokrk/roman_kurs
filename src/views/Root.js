@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Button from 'components/atoms/Button/Button';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import Input from 'components/atoms/Input/Input';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MainTemplate from '../templates/MainTemplate';
+import Notes from './Notes';
+import Articles from './Articles';
+import Twitters from './Twitters';
 
 const Root = () => (
   <MainTemplate>
