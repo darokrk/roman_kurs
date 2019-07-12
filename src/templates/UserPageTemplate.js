@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Sidebar from '../components/organisms/Sidebar/Sidebar';
+import Input from '../components/atoms/Input/Input';
+import Heading from '../components/atoms/Heading/Heading';
 
 const StyledGridWrapper = styled.div`
   padding: 25px 150px 25px 70px;
@@ -10,10 +12,18 @@ const StyledGridWrapper = styled.div`
   grid-gap: 85px;
 `;
 
+const StyledPageHeader = styled.div``;
+
 const UserPageTemplate = ({ children, pageType }) => (
   <>
     <Sidebar pageType={pageType} />
-    <StyledGridWrapper>{children}</StyledGridWrapper>
+    <StyledGridWrapper>
+      <StyledPageHeader>
+        <Input search />
+        <Heading>Notes</Heading>
+      </StyledPageHeader>
+      {children}
+    </StyledGridWrapper>
   </>
 );
 
