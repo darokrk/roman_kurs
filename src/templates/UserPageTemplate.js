@@ -6,26 +6,41 @@ import Input from '../components/atoms/Input/Input';
 import Heading from '../components/atoms/Heading/Heading';
 import Paragraph from '../components/atoms/Paragraph/Paragraph';
 
-const StyledGridWrapper = styled.div`
+const StyledWrapper = styled.div`
   padding: 25px 150px 25px 70px;
+`;
+const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 85px;
 `;
 
-const StyledPageHeader = styled.div``;
+const StyledPageHeader = styled.div`
+  margin: 25px 0 50px;
+`;
+
+const StyledHeading = styled(Heading)`
+  margin: 25px 0 0 0;
+`;
+
+const StyledParagraph = styled(Paragraph)`
+  margin: 0;
+  font-weight: ${({ theme }) => theme.bold};
+`;
 
 const UserPageTemplate = ({ children, pageType }) => (
   <>
     <Sidebar pageType={pageType} />
-    <StyledGridWrapper>
+    <StyledWrapper>
       <StyledPageHeader>
-        <Input search />
-        <Heading>Notes</Heading>
-        <Paragraph>6 notes</Paragraph>
+        <Input search placeholder="Search" />
+        <StyledHeading big as="h1">
+          Notes
+        </StyledHeading>
+        <StyledParagraph>6 notes</StyledParagraph>
       </StyledPageHeader>
-      {children}
-    </StyledGridWrapper>
+      <StyledGrid>{children}</StyledGrid>
+    </StyledWrapper>
   </>
 );
 
