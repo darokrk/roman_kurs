@@ -4,12 +4,12 @@ import Card from '../components/molecules/Card/Card';
 
 const Notes = () => (
   <UserPageTemplate pageType="note">
-    <Card type="note" />
-    <Card type="note" />
-    <Card type="note" />
-    <Card type="note" />
-    <Card type="note" />
-    <Card type="note" />
+    <Card cardType="note" />
+    <Card cardType="note" />
+    <Card cardType="note" />
+    <Card cardType="note" />
+    <Card cardType="note" />
+    <Card cardType="note" />
   </UserPageTemplate>
 );
 
