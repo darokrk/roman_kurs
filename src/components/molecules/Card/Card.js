@@ -72,6 +72,7 @@ const Card = ({ cardType, title, created, twitterName, articleUrl, content }) =>
       <StyledHeading>{title}</StyledHeading>
       {cardType === 'twitter' && <StyledAvatar src={`https://avatars.io/twitter/${twitterName}`} />}
       {cardType === 'article' && <StyledLinkButton src={articleUrl} />}
+      <DateInfo>{created}</DateInfo>
     </InnerWrapper>
     <InnerWrapper flex>
       <Paragraph>{content}</Paragraph>
